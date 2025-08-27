@@ -1,10 +1,17 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Movie Predictor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
+<head>
+  <meta charset="utf-8"/>
+  <title>Movie rating predictor</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <style>
+    body{font-family:system-ui,sans-serif;margin:0;padding:0}
+    .container{max-width:860px;margin:2rem auto;padding:0 1rem}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .error{color:crimson;margin-top:.5rem}
+    input:invalid{outline:2px solid rgba(220,20,60,.35)}
+  </style>
+</head>
 <body style="font-family: system-ui, sans-serif;">
   <main class="container">
     <h1>Movie rating predictor</h1>
@@ -40,7 +47,6 @@
       </div>
       <button id="submit-btn" type="submit">Predict</button>
     </form>
-
   </main>
 
   <script src="/js/main.js"></script>
