@@ -5,8 +5,44 @@
     <title>Movie Predictor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body style="font-family: system-ui, sans-serif;">
-    <div id="app"></div>
-    <script src="/js/main.js"></script>
-  </body>
+<body style="font-family: system-ui, sans-serif;">
+  <main class="container">
+    <h1>Movie rating predictor</h1>
+
+    <form id="predict-form" novalidate>
+      <label>Runtime (min):
+        <input id="runtime" name="runtime" type="number"
+               min="1" max="400" step="1" 
+               inputmode="numeric" />
+      </label><br/>
+
+      <label>Number of ratings:
+        <input id="num_of_ratings" name="num_of_ratings" type="number"
+               min="0" max="4000000" step="1" 
+               inputmode="numeric" />
+      </label><br/>
+
+      <label>Release year:
+        <input id="release_year" name="release_year" type="number"
+               min="1900" max="2030" step="1" 
+               inputmode="numeric" />
+      </label>
+
+      <div style="margin-top:1rem;font-weight:600">Genres:</div>
+      <div class="grid" style="margin:.5rem 0 1rem">
+        <label><input type="checkbox" name="drama"> drama</label>
+        <label><input type="checkbox" name="biography"> biography</label>
+        <label><input type="checkbox" name="documentary"> documentary</label>
+        <label><input type="checkbox" name="animation"> animation</label>
+        <label><input type="checkbox" name="action"> action</label>
+        <label><input type="checkbox" name="comedy"> comedy</label>
+        <label><input type="checkbox" name="horror"> horror</label>
+      </div>
+      <button id="submit-btn" type="submit">Predict</button>
+    </form>
+
+  </main>
+
+  <script src="/js/main.js"></script>
+</body>
 </html>

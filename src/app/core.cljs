@@ -1,16 +1,17 @@
-(ns app.core
-  (:require [reagent.core :as r]
-            [reagent.dom.client :as rdom]))
+(ns app.core)
 
-(defn App []
-  [:div {:style {:maxWidth "860px" :margin "2rem auto" :fontFamily "system-ui, sans-serif"}}
-   [:h1 "Movie rating predictor"]])
+(defn q [sel] (.querySelector js/document sel))
 
-(defonce root* (atom nil))
+(defn form-valid? [^js form]
+  (.checkValidity form))
 
-(defn mount! []
-  (let [container (.getElementById js/document "app")]
-    (when-not @root* (reset! root* (rdom/create-root container)))
-    (rdom/render @root* (r/as-element [App]))))
+(defn handle-submit! [^js e]
+  (.preventDefault e)
+  (let [form (.-currentTarget e)]
+    (if (form-valid? form)
+      (js/console.log "Valid form!")
+      (js/console.warn "Not valid form"))))
 
-(defn init [] (mount!))
+(defn ^:export init []
+  (when-let [form (q "#predict-form")]
+    (.addEventListener form "submit" handle-submit!)))
