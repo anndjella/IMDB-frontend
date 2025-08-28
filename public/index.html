@@ -21,21 +21,21 @@
       <label><b>Runtime (min):
         <input id="runtime" name="runtime" type="number"
                min="20" max="400" required placeholder="e.g. 95"
-               inputmode="numeric" />
+               inputmode="numeric" required pattern="\d+"/>
                </b>
       </label><br/>
 
       <label><b>Number of ratings:
         <input id="num_of_ratings" name="num_of_ratings" type="number"
                min="0" max="4000000" required placeholder="e.g. 15000"
-               inputmode="numeric" />
+               inputmode="numeric" required pattern="\d+"/>
                </b>
       </label><br/>
 
       <label><b>Release year:
         <input id="release_year" name="release_year" type="number"
                min="1900" max="2030" required placeholder="e.g. 2015"
-               inputmode="numeric" />
+               inputmode="numeric" required pattern="\d+"/>
                </b>
       </label>
 

@@ -18,8 +18,8 @@
   (let [el (fn [n] (qe form (str "[name='" n "']")))
         num (fn [n] (or (to-int (el n)) 0))
         bin (fn [n] (to-binary (el n)))]
-    #js {:runtime         (num "runtime")
-         :num_of_ratings  (num "num_of_ratings")
+    #js {:runtime_cleaned         (num "runtime")
+         :num_of_ratings_cleaned  (num "num_of_ratings")
          :release_year    (num "release_year")
          :drama (bin "drama") :biography (bin "biography") 
          :documentary (bin "documentary") :animation (bin "animation")
