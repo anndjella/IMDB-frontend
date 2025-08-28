@@ -10,29 +10,33 @@
     .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
     .error{color:crimson;margin-top:.5rem}
     input:invalid{outline:2px solid rgba(220,20,60,.35)}
+    form input[type="number"] {width: 200px; max-width: 100%;padding: 12px 14px;   border-radius: 10px; }
   </style>
 </head>
 <body style="font-family: system-ui, sans-serif;">
-  <main class="container">
+    <main class="container">
     <h1>Movie rating predictor</h1>
 
     <form id="predict-form" novalidate>
-      <label>Runtime (min):
+      <label><b>Runtime (min):
         <input id="runtime" name="runtime" type="number"
-               min="1" max="400" step="1" 
+               min="20" max="400" required placeholder="e.g. 95"
                inputmode="numeric" />
+               </b>
       </label><br/>
 
-      <label>Number of ratings:
+      <label><b>Number of ratings:
         <input id="num_of_ratings" name="num_of_ratings" type="number"
-               min="0" max="4000000" step="1" 
+               min="0" max="4000000" required placeholder="e.g. 15000"
                inputmode="numeric" />
+               </b>
       </label><br/>
 
-      <label>Release year:
+      <label><b>Release year:
         <input id="release_year" name="release_year" type="number"
-               min="1900" max="2030" step="1" 
+               min="1900" max="2030" required placeholder="e.g. 2015"
                inputmode="numeric" />
+               </b>
       </label>
 
       <div style="margin-top:1rem;font-weight:600">Genres:</div>
@@ -45,8 +49,14 @@
         <label><input type="checkbox" name="comedy"> comedy</label>
         <label><input type="checkbox" name="horror"> horror</label>
       </div>
+
       <button id="submit-btn" type="submit">Predict</button>
+      <span id="loading" style="margin-left:.5rem;display:none">Predicting…</span>
+      <div id="errors" class="error"></div>
     </form>
+
+    <p id="prediction" style="margin-top:1rem;font-size:1.1rem"></p>
+    <pre id="warnings" style="background:#f6f6f6;padding:8px;display:none"></pre>
   </main>
 
   <script src="/js/main.js"></script>
