@@ -24,16 +24,16 @@ cd <IMDB-frontend>
 npm install
 npx shadow-cljs watch app
 ```
-The dev server will start at **http://localhost:8010/**.\
+The dev server will start at **http://localhost:8010/**.
     Open that URL in your browser to use the UI.
 
 ## Form Input Constraints
 
 When entering values, the UI enforces the following ranges:
 
--   **Runtime (minutes):** must be between 20 and 400 (e.g. 95).\
+-   **Runtime (minutes):** must be between 20 and 400 (e.g. 95).
 -   **Number of ratings:** must be between 0 and 4,000,000
-    (e.g. 15,000).\
+    (e.g. 15,000).
 -   **Release year:** must be between 1900 and 2030 (e.g. 2015).
 
 All fields are **required** and only accept digits (`pattern="\d+"`,
