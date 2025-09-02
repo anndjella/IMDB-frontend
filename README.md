@@ -18,14 +18,14 @@ To run the frontend locally, make sure you have the following installed:
 
 # Quick Start - Backend then Frontend
 
-Start the **backend** first, then run the **frontend** (UI).
+Start the **backend** first (explained in https://github.com/anndjella/projekat_clojure), then run the **frontend** (UI).
 
 ## Frontend
 
 ```bash
 # In a second terminal
-git clone <https://github.com/anndjella/IMDB-frontend>
-cd <IMDB-frontend>
+git clone https://github.com/anndjella/IMDB-frontend
+cd IMDB-frontend
 
 npm install
 npx shadow-cljs watch app
