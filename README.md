@@ -1,6 +1,6 @@
 # Movie Rating Predictor - Frontend (ClojureScript)
 
-A simple browser UI for predicting a movie’s IMDB rating.  
+A simple browser UI for predicting a movie's IMDB rating.  
 Users enter **runtime**, **number of ratings**, **release year**, and select **genres**; the app sends a JSON payload to the backend `POST /api/predict` and shows the predicted rating (rounded to one decimal).
 
 ## Tech
@@ -10,11 +10,17 @@ Users enter **runtime**, **number of ratings**, **release year**, and select **g
 - **HTML/CSS** 
 - Talks to the backend at: `http://localhost:3000/api/predict` (configurable)
 
+To run the frontend locally, make sure you have the following installed:
+
+- **Node.js**
+- **npm** (comes with Node.js)
+- **Java JDK**
+
 # Quick Start - Backend then Frontend
 
 Start the **backend** first, then run the **frontend** (UI).
 
-## 2) Frontend
+## Frontend
 
 ```bash
 # In a second terminal
@@ -32,7 +38,7 @@ The dev server will start at **http://localhost:8010/**.
 When entering values, the UI enforces the following ranges:
 
 -   **Runtime (minutes):** must be between 20 and 400 (e.g. 95).
--   **Number of ratings:** must be between 0 and 4,000,000
+-   **Number of ratings:** must be between 1 and 4,000,000
     (e.g. 15,000).
 -   **Release year:** must be between 1900 and 2030 (e.g. 2015).
 
